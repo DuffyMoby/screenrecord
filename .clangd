@@ -1,0 +1,14 @@
+CompileFlags:
+  # Where compile_commands.json lives, relative to this file.
+  CompilationDatabase: build
+  Remove:
+    # MSVC-only flags that clang's driver rejects outright.
+    - /Zc:__STDC__
+    - /external:*
+    - /analyze*
+
+Diagnostics:
+  ClangTidy:
+    # clangd reads .clang-tidy for the check list; this only adds fast fixes.
+    FastCheckFilter: Strict
+  UnusedIncludes: Strict
