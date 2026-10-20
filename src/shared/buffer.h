@@ -15,7 +15,7 @@ struct Frame {
 
 class Buffer {
     public:
-        Buffer() = default;
+        Buffer() = default; // TODO
 
         Frame& acquire_write() {
             std::unique_lock<std::mutex> lock(mutex_);
